@@ -15,7 +15,7 @@ func main() {
 	r := gin.Default()
 
 	// Serve the bundled JavaScript file
-	r.Static("/ui/dist", "./ui/dist")
+	r.Static("/_ui/dist", "./_ui/dist")
 
 	r.LoadHTMLGlob("templates/*")
 
