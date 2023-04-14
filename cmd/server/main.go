@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +14,9 @@ func getData(c *gin.Context) {
 
 func main() {
 	r := gin.Default()
+
+	// Add CORS middleware
+	r.Use(cors.Default())
 
 	// Serve the bundled JavaScript file
 	r.Static("/_ui/dist", "./_ui/dist")
